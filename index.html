@@ -3,68 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Piyush Modi — Portfolio</title>
-  <meta name="description" content="Portfolio website of Piyush Modi — developer, designer, problem solver." />
+  <title>Piyush Modi — Text Portfolio</title>
+  <meta name="description" content="Text-only portfolio site for Piyush Modi" />
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#7c3aed;--muted:#9aa4b2;--glass:rgba(255,255,255,0.03)}
+    :root{--bg:#0b1220;--card:#0f1724;--accent:#7c3aed;--muted:#9aa4b2}
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{font-family:Inter,Segoe UI,system-ui,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,#071123 0%, #081827 60%); color:#e6eef6; -webkit-font-smoothing:antialiased}
-    .container{max-width:1000px;margin:36px auto;padding:24px}
-
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#081827}
-    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+    body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#06070a 0%,#0b1220 100%);color:#e6eef6}
+    .wrap{max-width:900px;margin:36px auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:800;font-size:20px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
     nav a:hover{color:white}
 
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:28px}
-    .hero-left h1{font-size:28px;margin:0 0 8px}
-    .hero-left p{color:var(--muted);margin:0 0 16px;line-height:1.6}
-    .cta{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:#061224;font-weight:700;text-decoration:none}
+    .hero{background:var(--card);padding:18px;border-radius:12px;margin-top:18px}
+    .hero h1{margin:0 0 8px;font-size:26px}
+    .hero p{margin:0;color:var(--muted);line-height:1.6}
 
-    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
-    .profile-pic{width:100%;height:100%;border-radius:12px;background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');background-size:cover;background-position:center}
+    .section{background:rgba(255,255,255,0.02);margin-top:18px;padding:16px;border-radius:10px}
+    h2{margin:0 0 10px}
+    p.small{color:var(--muted);margin:0 0 10px}
 
-    section{margin-top:26px}
-    h2{margin:0 0 10px;font-size:18px}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .projects{display:grid;grid-template-columns:1fr;gap:12px}
+    .proj{padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .proj h3{margin:0 0 6px}
+    .proj p{margin:0;color:var(--muted)}
 
-    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .proj{border-radius:10px;padding:12px;background:var(--glass);min-height:120px}
-    .proj h3{margin:0 0 6px;font-size:16px}
-    .proj p{margin:0;color:var(--muted);font-size:13px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:transparent;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:600}
 
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.04);color:var(--muted);font-weight:600;font-size:13px}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
 
-    form{display:grid;gap:10px}
-    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-    button{padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#06b6d4);font-weight:700;color:#061224}
-
-    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .projects{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:560px){
-      .projects{grid-template-columns:1fr}
-      nav a{margin-left:8px;font-size:14px}
-    }
+    @media (max-width:640px){.wrap{padding:16px}.hero h1{font-size:20px}}
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <header>
-      <div class="brand">
-        <div class="logo">PM</div>
-        <div>
-          <div style="font-weight:700">Piyush Modi</div>
-          <div style="font-size:13px;color:var(--muted)">Frontend • Problem Solver • Designer</div>
-        </div>
-      </div>
+      <div class="brand">Piyush Modi</div>
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -75,83 +50,61 @@
 
     <main>
       <section class="hero">
-        <div class="hero-left">
-          <h1>Hi — I'm <span style="color:var(--accent)">Piyush</span>. I build clean, modern websites.</h1>
-          <p>I craft user-friendly interfaces and write maintainable code. I'm passionate about performance, accessibility and polished UI/UX.
-          </p>
-          <a class="cta" href="#projects">See my work</a>
-          <div style="margin-top:16px;color:var(--muted);font-size:14px">Available for freelance & full-time roles • <a href="resume.pdf" style="color:inherit;text-decoration:underline">Download resume</a></div>
-        </div>
-
-        <div class="card">
-          <div class="profile-pic" style="height:360px;border-radius:12px"></div>
-        </div>
+        <h1>Hi, I'm Piyush — Web Developer & Problem Solver</h1>
+        <p>I focus on building clear, accessible, and maintainable web applications. I enjoy clean code, good UX, and efficient solutions.</p>
       </section>
 
-      <section id="about" class="card">
+      <section id="about" class="section">
         <h2>About</h2>
-        <p style="color:var(--muted);line-height:1.6">I'm Piyush — a web developer who loves turning ideas into delightful, accessible web experiences. I work with HTML, CSS, JavaScript and modern frameworks. When I'm not coding I enjoy learning algorithms, contributing to open-source, and experimenting with design systems.</p>
+        <p class="small">Brief</p>
+        <p>I have experience building responsive websites and web apps using HTML, CSS, and JavaScript. I pay close attention to accessibility, performance and usability. In my projects I combine pragmatic engineering with design sensibility to deliver high-quality user experiences.</p>
+        <p class="small">Interests</p>
+        <p>Frontend development, UI/UX, algorithms, and open-source contributions.</p>
       </section>
 
-      <section id="projects">
+      <section id="projects" class="section">
         <h2>Projects</h2>
         <div class="projects">
-          <div class="proj card">
-            <h3>Project One</h3>
-            <p>Single-page app with responsive layout and smooth animations. Built with vanilla JS.</p>
-            <div style="margin-top:8px"><a href="#" style="color:var(--muted);text-decoration:underline;font-size:13px">View live</a> — <a href="#" style="color:var(--muted);text-decoration:underline;font-size:13px">Source</a></div>
-          </div>
+          <article class="proj">
+            <h3>Portfolio Site (Text-only)</h3>
+            <p>A minimal, accessible portfolio implemented with semantic HTML and lightweight CSS. No images — optimized for speed and readability.</p>
+          </article>
 
-          <div class="proj card">
-            <h3>Project Two</h3>
-            <p>E-commerce UI concept with accessible forms and microinteractions.</p>
-            <div style="margin-top:8px"><a href="#" style="color:var(--muted);text-decoration:underline;font-size:13px">View live</a> — <a href="#" style="color:var(--muted);text-decoration:underline;font-size:13px">Source</a></div>
-          </div>
+          <article class="proj">
+            <h3>Task Manager</h3>
+            <p>Single-page application for creating and tracking tasks. Features keyboard shortcuts and offline-first behavior.</p>
+          </article>
 
-          <div class="proj card">
-            <h3>Project Three</h3>
-            <p>Data dashboard prototype with charts and filters. Focus on clarity and performance.</p>
-            <div style="margin-top:8px"><a href="#" style="color:var(--muted);text-decoration:underline;font-size:13px">View live</a> — <a href="#" style="color:var(--muted);text-decoration:underline;font-size:13px">Source</a></div>
-          </div>
+          <article class="proj">
+            <h3>Data Dashboard</h3>
+            <p>Interactive dashboard showcasing charts and filters to explore datasets; focus on clarity and performance.</p>
+          </article>
         </div>
       </section>
 
-      <section id="skills" class="card">
+      <section id="skills" class="section">
         <h2>Skills</h2>
         <div class="skills" style="margin-top:10px">
-          <div class="skill">HTML</div>
-          <div class="skill">CSS</div>
-          <div class="skill">JavaScript</div>
-          <div class="skill">React</div>
-          <div class="skill">Responsive Design</div>
-          <div class="skill">Accessibility</div>
-          <div class="skill">Git</div>
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript (ES6+)</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">Accessibility (A11y)</span>
+          <span class="skill">Git & GitHub</span>
         </div>
       </section>
 
-      <section id="contact" class="card">
+      <section id="contact" class="section">
         <h2>Contact</h2>
-        <form action="mailto:you@example.com" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="email" name="email" placeholder="Your email" required />
-          <textarea name="message" rows="5" placeholder="Message" required></textarea>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button type="submit">Send message</button>
-            <a href="mailto:you@example.com" style="align-self:center;color:var(--muted);text-decoration:underline">Or email me directly</a>
-          </div>
-        </form>
+        <p class="small">Get in touch</p>
+        <p>If you'd like to work together or request my resume, email me at <strong>piyush@example.com</strong> or use the contact link: <a href="mailto:piyush@example.com" style="color:var(--accent)">piyush@example.com</a>.</p>
       </section>
-
     </main>
 
     <footer>
-      <div>© <span id="year"></span> Piyush Modi — Built with care.</div>
-      <div style="margin-top:8px;color:var(--muted)">Follow: <a href="#" style="color:var(--muted);text-decoration:underline">GitHub</a> · <a href="#" style="color:var(--muted);text-decoration:underline">LinkedIn</a></div>
+      <div>© <span id="year"></span> Piyush Modi — Text-only portfolio.</div>
     </footer>
   </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
